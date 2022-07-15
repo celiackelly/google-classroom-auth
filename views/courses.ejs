@@ -7,6 +7,11 @@
     <title>Courses</title>
 </head>
 <body>
-    <p>This is where courses will appear</p>
+    <h1>Your Courses</h1>
+    <% courses.forEach(course => { %>
+        <p><%= course.name %></p>
+        <a href="<%= course.alternateLink %>">Link</a>
+      <% })
+    %>
 </body>
 </html>

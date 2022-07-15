@@ -1,9 +1,15 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const googleApi = require("../helpers/google-api")
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get("/", async (req, res, next) => {
+  if (!req.session.tokens) {
+    res.redirect("/");
+  }
 
-module.exports = router;
+  const courses = await googleApi.getCourses(req.session.tokens)
+  res.render('courses', {courses: courses})
+
+})
+
+module.exports = router

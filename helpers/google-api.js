@@ -40,3 +40,14 @@ module.exports.getToken = async (code) => {
   const data = await auth.getToken(code)
   return data.tokens
 }
+
+module.exports.getCourses = async (tokens) => {
+  const auth = createConnection();
+  auth.setCredentials(tokens);
+
+  const res = await google
+    .classroom({ version: "v1", auth })
+    .courses.list({ teacherId: "me", courseStates: "ACTIVE" });
+
+  return res.data.courses ? [...res.data.courses] : [];
+}
