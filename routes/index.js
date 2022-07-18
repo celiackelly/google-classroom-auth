@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const googleApi = require("../helpers/google-api")
+const googleApi = require("../utils/google-api")
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
