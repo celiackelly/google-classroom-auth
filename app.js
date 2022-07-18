@@ -1,6 +1,7 @@
 const createError = require('http-errors')
 const express = require('express')
 const session = require('express-session')
+const expressLayouts = require('express-ejs-layouts')
 const path = require('path')
 const logger = require('morgan')
 const cors = require('cors')
@@ -9,16 +10,20 @@ const connectDB = require('./db')
 
 const indexRouter = require('./routes/index')
 const coursesRouter = require('./routes/courses')
+const registerRouter = require('./routes/register')
+
 
 const app = express()
 connectDB()
 
 // view engine setup
 app.set('view engine', 'ejs')
+app.set('layout', './layouts/layout')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
+app.use(expressLayouts)
 app.use(logger('dev'))
 app.use(cors())
 app.use(session({
@@ -29,6 +34,7 @@ app.use(session({
 
 app.use('/', indexRouter)
 app.use('/courses', coursesRouter)
+app.use('/register', registerRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
