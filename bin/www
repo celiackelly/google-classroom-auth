@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 /**
+ * Check out this explanation of bin/www - https://stackoverflow.com/questions/23169941/what-does-bin-www-do-in-express-4-x
  * Module dependencies.
  */
 
@@ -12,7 +13,7 @@ const http = require('http');
  * Get port from environment and store in Express.
  */
 
- const port = normalizePort(process.env.PORT || '7500');
+const port = normalizePort(process.env.PORT || '7500');
 app.set('port', port);
 
 /**
