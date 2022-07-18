@@ -5,12 +5,14 @@ const path = require('path')
 const logger = require('morgan')
 const cors = require('cors')
 require('dotenv').config()
+const connectDB = require('./db') 
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 const coursesRouter = require('./routes/courses')
 
 const app = express()
+connectDB()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
