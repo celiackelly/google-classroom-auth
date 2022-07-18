@@ -8,7 +8,7 @@ router.get("/", async (req, res, next) => {
   }
 
   const courses = await googleApi.getCourses(req.session.tokens)
-  res.render('courses', {courses: courses})
+  res.render('courses', {title: 'Courses', courses: courses})
 
 })
 
@@ -26,7 +26,7 @@ router.get("/:id", async (req, res, next) => {
 
   const studentNames = students.map(student => student.profile.name.fullName)
 
-  res.render('course', { course, studentNames })
+  res.render('course', { title: 'Course', course, studentNames })
 
 })
 

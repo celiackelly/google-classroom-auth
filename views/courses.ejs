@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
-</head>
-<body>
-    <h1>Your Courses</h1>
-    <% courses.forEach(course => { %>
-        <p><%= course.name %></p>
-        <a href="/courses/<%= course.id %>">View Roster</a>
-        <a href="<%= course.alternateLink %>">View on Google Classroom</a>
-      <% })
-    %>
-</body>
-</html>
+<h1>Your Courses</h1>
+<% courses.forEach(course => { %>
+    <p><%= course.name %></p>
+    <a href="/courses/<%= course.id %>">View Roster</a>
+    <a href="<%= course.alternateLink %>">View on Google Classroom</a>
+    <% })
+%>
