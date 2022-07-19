@@ -4,16 +4,20 @@
         <form action="/login" method="POST">
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="username" id="username-input" placeholder="#" required>
-                <label for="username-input">Username</label>
+                <input type="email" class="form-control" name="email" id="email-input" placeholder="#" required>
+                <label for="email-input">Email</label>
             </div>
 
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" name="password" id="password-input" placeholder="#" required>
-                <label for="username-input">Email</label>
+                <label for="password-input">Password</label>
             </div>
             
             <button type="submit" class="btn btn-primary mb-3">Log in</button>
+
+            <span>or</span>
+
+            <a href="<%= loginUrl %>">Continue with Google</a>
             
         </form>
     </div>

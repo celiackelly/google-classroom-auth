@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
     const tokens = await googleApi.getToken(req.query.code)
     req.session.tokens = tokens
     req.session.save(() => {
-      res.redirect('/courses')
+      res.redirect('/dashboard')
     })
   } else {
     res.render('index', { title: 'Home', loginUrl: googleApi.loginUrl() })

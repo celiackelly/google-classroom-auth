@@ -12,7 +12,7 @@ router.get("/", async (req, res, next) => {
 
 })
 
-router.get("courses/:id", async (req, res, next) => {
+router.get("/courses/:id", async (req, res, next) => {
   if (!req.session.tokens) {
     res.redirect("/");
   }

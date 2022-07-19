@@ -9,7 +9,7 @@ require('dotenv').config()
 const connectDB = require('./db') 
 
 const indexRouter = require('./routes/index')
-const coursesRouter = require('./routes/courses')
+const dashboardRouter = require('./routes/dashboard')
 const registerRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const aboutRouter = require('./routes/about')
@@ -35,7 +35,7 @@ app.use(session({
 }))
 
 app.use('/', indexRouter)
-app.use('/courses', coursesRouter)
+app.use('/dashboard', dashboardRouter)
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/about', aboutRouter)
