@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
       res.redirect('/dashboard')
     })
   } else {
-    res.render('index', { title: 'Home', loginUrl: googleApi.loginUrl() })
+    res.render('index', { title: 'Home' })
   }
 })
 
