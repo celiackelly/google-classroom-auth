@@ -1,0 +1,7 @@
+<h1>Your Courses</h1>
+<% courses.forEach(course => { %>
+    <p><%= course.name %></p>
+    <a href="/courses/<%= course.id %>">View Roster</a>
+    <a href="<%= course.alternateLink %>">View on Google Classroom</a>
+    <% })
+%>

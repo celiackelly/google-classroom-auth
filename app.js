@@ -11,7 +11,7 @@ const connectDB = require('./db')
 const indexRouter = require('./routes/index')
 const coursesRouter = require('./routes/courses')
 const registerRouter = require('./routes/register')
-
+const aboutRouter = require('./routes/about')
 
 const app = express()
 connectDB()
@@ -36,6 +36,7 @@ app.use(session({
 app.use('/', indexRouter)
 app.use('/courses', coursesRouter)
 app.use('/register', registerRouter)
+app.use('/about', aboutRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
