@@ -8,7 +8,7 @@ const UserSchema = new Mongoose.Schema({
     }, 
     password: {
         type: String, 
-        minLength: 8, 
+        minLength: 8, s
         required: true
     }, 
     courses: {
